@@ -3,7 +3,7 @@ import ContactList from 'components/ContactList';
 import { Container } from 'components/Container/Container.styled';
 import FormAddContact from 'components/FormAddContact';
 import { nanoid } from 'nanoid';
-import defaultContacts from './contacts.json';
+// import defaultContacts from './contacts.json';
 
 import { Component } from 'react';
 import { Filter } from 'components/Filter';
