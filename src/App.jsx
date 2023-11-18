@@ -55,6 +55,7 @@ export class App extends Component {
     this.setState({ filter: e.target.value.toLowerCase() });
   };
 
+  
   render() {
     return (
       <Container>
