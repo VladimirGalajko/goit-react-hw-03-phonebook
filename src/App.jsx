@@ -16,11 +16,12 @@ export class App extends Component {
 
   componentDidMount() {
     const localData = localStorage.getItem('contacts');
-    console.log(localData);
+    //console.log(localData);
     if (localData && JSON.parse(localData).length) {
       this.setState({ contacts: JSON.parse(localData) });
-    } else this.setState({ contacts: defaultContacts });
-    console.log(this.state);
+    } 
+    //else this.setState({ contacts: defaultContacts });
+   
   }
   componentDidUpdate() {
     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
