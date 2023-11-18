@@ -16,12 +16,9 @@ export class App extends Component {
 
   componentDidMount() {
     const localData = localStorage.getItem('contacts');
-    //console.log(localData);
     if (localData && JSON.parse(localData).length) {
       this.setState({ contacts: JSON.parse(localData) });
-    } 
-    //else this.setState({ contacts: defaultContacts });
-   
+    }
   }
   componentDidUpdate() {
     localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
@@ -59,7 +56,6 @@ export class App extends Component {
   };
 
   render() {
-    // console.log(this.state);
     return (
       <Container>
         <h1>Phonebook 📱</h1>
