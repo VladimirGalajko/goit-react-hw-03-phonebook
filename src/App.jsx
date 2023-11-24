@@ -20,8 +20,11 @@ export class App extends Component {
       this.setState({ contacts: JSON.parse(localData) });
     }
   }
-  componentDidUpdate() {
-    localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+  componentDidUpdate(prevProps, prevState) {
+    if (this.state.contacts.length !== prevState.contacts.length) {
+      console.log(this.state.contacts !== prevState.contacts)
+      localStorage.setItem('contacts', JSON.stringify(this.state.contacts));
+    }
   }
   addContact = e => {
     const name = e.name;
@@ -54,7 +57,7 @@ export class App extends Component {
     console.log(e.target.value);
     this.setState({ filter: e.target.value.toLowerCase() });
   };
-  
+
   render() {
     return (
       <Container>
